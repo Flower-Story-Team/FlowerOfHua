@@ -25,7 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef32681e-f8c4-46b1-bf0a-1ff190e35bfc" name="默认的" comment="Add:Base" />
+    <list default="true" id="ef32681e-f8c4-46b1-bf0a-1ff190e35bfc" name="默认的" comment="Add:Base">
+      <change beforePath="$PROJECT_DIR$/Todo.md" beforeDir="false" afterPath="$PROJECT_DIR$/Todo.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,7 +166,7 @@
       <workItem from="1594208314196" duration="18015000" />
       <workItem from="1594236510355" duration="642000" />
       <workItem from="1594237297435" duration="20000" />
-      <workItem from="1594283635068" duration="1246000" />
+      <workItem from="1594283635068" duration="1743000" />
     </task>
     <task id="LOCAL-00001" summary="add:添加了一点点东西一把小刀">
       <created>1593982441179</created>
@@ -250,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594284796879</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add:Base">
+      <created>1594285339315</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1594285339316</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
