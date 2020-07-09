@@ -1,0 +1,311 @@
+Index: src/main/java/cx/rain/mc/forgemod/culturecraft/item/automatic/ItemSeedMillet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/cx/rain/mc/forgemod/culturecraft/item/automatic/ItemSeedMillet.java	(date 1594028352385)
++++ src/main/java/cx/rain/mc/forgemod/culturecraft/item/automatic/ItemSeedMillet.java	(date 1594028352385)
+@@ -0,0 +1,13 @@
++package cx.rain.mc.forgemod.culturecraft.item.automatic;
++
++import cx.rain.mc.forgemod.culturecraft.api.annotation.ModItem;
++import cx.rain.mc.forgemod.culturecraft.group.Groups;
++import net.minecraft.item.Item;
++
++@ModItem(name = "seed_millet")
++public class ItemSeedMillet extends Item {
++    public ItemSeedMillet() {
++        super(new Properties()
++        .group(Groups.MISC));
++    }
++}
+Index: src/main/java/cx/rain/mc/forgemod/culturecraft/item/automatic/ItemSoybenMilk.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/cx/rain/mc/forgemod/culturecraft/item/automatic/ItemSoybenMilk.java	(date 1594026372910)
++++ src/main/java/cx/rain/mc/forgemod/culturecraft/item/automatic/ItemSoybenMilk.java	(date 1594026372910)
+@@ -0,0 +1,19 @@
++package cx.rain.mc.forgemod.culturecraft.item.automatic;
++
++import cx.rain.mc.forgemod.culturecraft.api.annotation.ModItem;
++import cx.rain.mc.forgemod.culturecraft.group.Groups;
++import net.minecraft.item.Food;
++import net.minecraft.item.Item;
++
++@ModItem(name = "milk_soyben")
++public class ItemSoybenMilk extends Item {
++    private static Food food = new Food.Builder()
++            .hunger(3)
++            .saturation(6)
++            .build();
++    public ItemSoybenMilk() {
++        super(new Properties()
++        .maxStackSize(1)
++        .group(Groups.MISC));
++    }
++}
+Index: src/main/java/cx/rain/mc/forgemod/culturecraft/block/automatic/BlockRice.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cx.rain.mc.forgemod.culturecraft.block.automatic;\r\n\r\nimport cx.rain.mc.forgemod.culturecraft.api.annotation.ModBlock;\r\nimport cx.rain.mc.forgemod.culturecraft.registry.RegistryItem;\r\nimport net.minecraft.block.Block;\r\nimport net.minecraft.block.BlockState;\r\nimport net.minecraft.block.Blocks;\r\nimport net.minecraft.block.CropsBlock;\r\nimport net.minecraft.item.ItemStack;\r\nimport net.minecraft.util.IItemProvider;\r\nimport net.minecraft.util.math.BlockPos;\r\nimport net.minecraft.util.math.shapes.ISelectionContext;\r\nimport net.minecraft.util.math.shapes.VoxelShape;\r\nimport net.minecraft.world.IBlockReader;\r\nimport net.minecraft.world.storage.loot.LootContext;\r\n\r\nimport java.util.Collections;\r\nimport java.util.List;\r\n\r\n\r\npublic class BlockRice extends CropsBlock {\r\n    private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{\r\n            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 18.0D, 16.0D),\r\n            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 22.0D, 16.0D),\r\n            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 26.0D, 16.0D),\r\n            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 32.0D, 16.0D),\r\n    };\r\n\r\n\r\n    public BlockRice() {\r\n        super(Block.Properties.from(Blocks.CARROTS));\r\n        setDefaultState(getStateContainer().getBaseState().with(getAgeProperty(), 0));\r\n    }\r\n\r\n    @Override\r\n    public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {\r\n        int age = state.get(getAgeProperty());\r\n        int stage = age / 2;\r\n        return SHAPE_BY_AGE[stage];\r\n    }\r\n\r\n        @Override\r\n    public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {\r\n        List<ItemStack> dropsOriginal = super.getDrops(state, builder);\r\n        if (!dropsOriginal.isEmpty())\r\n            return dropsOriginal;\r\n        return Collections.singletonList(new ItemStack(RegistryItem.ITEMS.get(\"seed_rice\"), (int) (2)));\r\n    }\r\n\r\n    @Override\r\n    public IItemProvider getSeedsItem() {\r\n        {\r\n            return RegistryItem.ITEMS.get(\"rice\");\r\n        }\r\n\r\n    }\r\n\r\n }\r\n
+===================================================================
+--- src/main/java/cx/rain/mc/forgemod/culturecraft/block/automatic/BlockRice.java	(revision 816ef996fd479d6b582f39254a917d0ccf03303a)
++++ src/main/java/cx/rain/mc/forgemod/culturecraft/block/automatic/BlockPlantRice.java	(date 1594029421592)
+@@ -17,8 +17,8 @@
+ import java.util.Collections;
+ import java.util.List;
+ 
+-
+-public class BlockRice extends CropsBlock {
++@ModBlock(name = "plant_rice")
++public class BlockPlantRice extends CropsBlock {
+     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
+             Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 18.0D, 16.0D),
+             Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 22.0D, 16.0D),
+@@ -27,8 +27,8 @@
+     };
+ 
+ 
+-    public BlockRice() {
+-        super(Block.Properties.from(Blocks.CARROTS));
++    public BlockPlantRice() {
++        super(Block.Properties.from(Blocks.WHEAT));
+         setDefaultState(getStateContainer().getBaseState().with(getAgeProperty(), 0));
+     }
+ 
+@@ -50,7 +50,7 @@
+     @Override
+     public IItemProvider getSeedsItem() {
+         {
+-            return RegistryItem.ITEMS.get("rice");
++            return RegistryItem.ITEMS.get("seed_rice");
+         }
+ 
+     }
+Index: src/main/java/cx/rain/mc/forgemod/culturecraft/item/automatic/ItemMillet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/cx/rain/mc/forgemod/culturecraft/item/automatic/ItemMillet.java	(date 1594029421611)
++++ src/main/java/cx/rain/mc/forgemod/culturecraft/item/automatic/ItemMillet.java	(date 1594029421611)
+@@ -0,0 +1,19 @@
++package cx.rain.mc.forgemod.culturecraft.item.automatic;
++
++import cx.rain.mc.forgemod.culturecraft.api.annotation.ModItem;
++import cx.rain.mc.forgemod.culturecraft.group.Groups;
++import net.minecraft.item.Food;
++import net.minecraft.item.Item;
++
++@ModItem(name = "millet")
++public class ItemMillet extends Item {
++    private static Food food =new Food.Builder()
++            .hunger(2)
++            .saturation(2)
++            .build();
++    public ItemMillet() {
++        super(new Properties()
++        .group(Groups.MISC)
++        .food(food));
++    }
++}
+Index: src/main/java/cx/rain/mc/forgemod/culturecraft/block/automatic/BlockPlantMillet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/cx/rain/mc/forgemod/culturecraft/block/automatic/BlockPlantMillet.java	(date 1594029421641)
++++ src/main/java/cx/rain/mc/forgemod/culturecraft/block/automatic/BlockPlantMillet.java	(date 1594029421641)
+@@ -0,0 +1,57 @@
++package cx.rain.mc.forgemod.culturecraft.block.automatic;
++
++import cx.rain.mc.forgemod.culturecraft.api.annotation.ModBlock;
++import cx.rain.mc.forgemod.culturecraft.registry.RegistryItem;
++import net.minecraft.block.Block;
++import net.minecraft.block.BlockState;
++import net.minecraft.block.Blocks;
++import net.minecraft.block.CropsBlock;
++import net.minecraft.item.ItemStack;
++import net.minecraft.util.IItemProvider;
++import net.minecraft.util.math.BlockPos;
++import net.minecraft.util.math.shapes.ISelectionContext;
++import net.minecraft.util.math.shapes.VoxelShape;
++import net.minecraft.world.IBlockReader;
++import net.minecraft.world.storage.loot.LootContext;
++
++import java.util.Collections;
++import java.util.List;
++
++@ModBlock(name = "plant_millet")
++public class BlockPlantMillet extends CropsBlock {
++    private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
++            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 18.0D, 16.0D),
++            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 22.0D, 16.0D),
++            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 26.0D, 16.0D),
++            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 32.0D, 16.0D),
++    };
++
++
++    public BlockPlantMillet() {
++        super(Block.Properties.from(Blocks.WHEAT));
++        setDefaultState(getStateContainer().getBaseState().with(getAgeProperty(), 0));
++    }
++
++    @Override
++    public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
++        int age = state.get(getAgeProperty());
++        int stage = age / 2;
++        return SHAPE_BY_AGE[stage];
++    }
++
++    @Override
++    public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
++        List<ItemStack> dropsOriginal = super.getDrops(state, builder);
++        if (!dropsOriginal.isEmpty())
++            return dropsOriginal;
++        return Collections.singletonList(new ItemStack(RegistryItem.ITEMS.get("seed_millet"), (int) (2)));
++    }
++
++    @Override
++    public IItemProvider getSeedsItem() {
++        {
++            return RegistryItem.ITEMS.get("seed_millet");
++        }
++
++    }
++}
+\ No newline at end of file
+Index: src/main/resources/assets/culturecraft/lang/en_us.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"itemGroup.culturecraft.blocks\": \"Culture Craft | Blocks\",\r\n  \"itemGroup.culturecraft.items\": \"Culture Craft | Items\",\r\n  \"itemGroup.culturecraft.machines\": \"Culture Craft | Machines\",\r\n  \"itemGroup.culturecraft.foods\": \"Culture Craft | Foods\",\r\n  \"itemGroup.culturecraft.combat\": \"Culture Craft | Combat\",\r\n  \"itemGroup.culturecraft.misc\": \"Culture Craft | Miscellaneous\",\r\n\r\n  \"item.culturecraft.celery_cabbage\": \"Celery Cabbage\",\r\n  \"item.culturecraft.eggplant\": \"Eggplant\",\r\n  \"item.culturecraft.pepper_chili\": \"Pepper Chili\",\r\n  \"item.culturecraft.pepper_green\": \"Pepper Green\",\r\n  \"item.culturecraft.radish_green\": \"Green Radish\",\r\n  \"item.culturecraft.radish_summer\": \"Summer Radish\",\r\n  \"item.culturecraft.radish_white\": \"White Radish\",\r\n  \"item.culturecraft.pepper_chili_seed\": \"Chili pepper Seed\",\r\n  \"item.culturecraft.pepper_green_seed\": \"Green Pepper Seed\",\r\n  \"item.culturecraft.rice\": \"Rice\",\r\n  \"item.culturecraft.cucumber\": \"Cucumber\",\r\n  \"item.culturecraft.eggplant_seed\": \"Eggplant Seed\",\r\n  \"item.culturecraft.millet_seed\": \"Millet Seed\",\r\n  \"item.culturecraft.seed_rice\": \"Rice Seed\",\r\n\r\n  \"item.culturecraft.bowl\": \"Bowl\",\r\n  \"item.culturecraft.plate\": \"Plate\",\r\n  \"item.culturecraft.knife\": \"Knife\",\r\n  \"item.culturecraft.chirping_wildgoose\": \"Chirping Wild Goose\",\r\n  \"item.culturecraft.seven_stars_precious_blade\": \"Seven stars precious blade\",\r\n\r\n  \"item.culturecraft.bowl_rice\": \"Cooked Rice\",\r\n  \"item.culturecraft.heroes_assemble\": \"Heroes Assemble\",\r\n  \"item.culturecraft.dumpling\": \"Dumpling\",\r\n  \"item.culturecraft.spirits\": \"Spirits\",\r\n  \"item.culturecraft.charred_food\": \"Charred Food\",\r\n  \"item.culturecraft.soybean_milk\": \"Soybean Milk\",\r\n  \"item.culturecraft.tofu\": \"Tofu\",\r\n  \"item.culturecraft.green_pepper_shredded_meat\": \"Pepper green with meat\",\r\n\r\n  \"item.culturecraft.buffalo_spawn_egg\": \"Buffalo Spawn Egg\",\r\n\r\n  \"block.culturecraft.marble_white\": \"White Marble\",\r\n  \"block.culturecraft.brick_black\": \"Black Brick\",\r\n  \"block.culturecraft.glaze_colored\": \"Coloured Glaze\",\r\n  \"block.culturecraft.tile_gray\": \"Gray Tiles\",\r\n  \"block.culturecraft.pottery\": \"Pottery\",\r\n  \"block.culturecraft.porcelain\": \"Porcelain\",\r\n  \"block.culturecraft.stove\": \"Stove\",\r\n  \"block.culturecraft.tile\": \"Tiles\",\r\n  \"block.culturecraft.log_peach\": \"Peach Tree Log\",\r\n  \"block.culturecraft.plank_peach\": \"Peach Tree Plank\",\r\n  \"block.culturecraft.leaves_peach\": \"Peach Tree Leaves\",\r\n  \"block.culturecraft.sapling_peach\": \"Peach Tree Sapling\",\r\n  \"block.culturecraft.log_walnut\": \"Walnut Tree Log\",\r\n  \"block.culturecraft.plank_walnut\": \"Walnut Tree Plank\",\r\n  \"block.culturecraft.leaves_walnut\": \"Walnut Tree Leaves\",\r\n  \"block.culturecraft.sapling_walnut\": \"Walnut Tree Sapling\",\r\n\r\n  \"entity.culturecraft.buffalo\": \"Buffalo\",\r\n\r\n  \"tooltip.culturecraft.heroes_assemble\": \"I think this is radishes meeting.\",\r\n  \"tooltip.culturecraft.bowl_rice\": \"Testy rice!\",\r\n  \"tooltip.culturecraft.bowl_empty\": \"It's bowl!\",\r\n  \"tooltip.culturecraft.plate\": \"It's plate\",\r\n  \"tooltip.culturecraft.green_pepper_shredded_meat\": \"Is it testy?\",\r\n  \"tooltip.culturecraft.tofu\": \"Tofu! Also known as bean curd, is a food prepared by coagulating soy milk \",\r\n  \"tooltip.culturecraft.tofu.2\": \"and then pressing the resulting cuds into soild white blocks of varying softness.\",\r\n  \"tooltip.culturecraft.knife\": \"Used for cutting foods.\",\r\n\r\n  \"message.culturecraft.player.join.welcome\": \"Welcome!\"\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/assets/culturecraft/lang/en_us.json	(revision 816ef996fd479d6b582f39254a917d0ccf03303a)
++++ src/main/resources/assets/culturecraft/lang/en_us.json	(date 1594027416409)
+@@ -20,7 +20,8 @@
+   "item.culturecraft.eggplant_seed": "Eggplant Seed",
+   "item.culturecraft.millet_seed": "Millet Seed",
+   "item.culturecraft.seed_rice": "Rice Seed",
+-
++  "item.culturecraft.milk_soyben": "Soyben Milk",
++  "item.culturecraft.scallion": "Scallion",
+   "item.culturecraft.bowl": "Bowl",
+   "item.culturecraft.plate": "Plate",
+   "item.culturecraft.knife": "Knife",
+Index: src/main/resources/assets/culturecraft/lang/zh_cn.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"itemGroup.culturecraft.blocks\": \"华夏文明 | 方块\",\r\n  \"itemGroup.culturecraft.items\": \"华夏文明 | 物品\",\r\n  \"itemGroup.culturecraft.machines\": \"华夏文明 | 机器\",\r\n  \"itemGroup.culturecraft.foods\": \"华夏文明 | 食物\",\r\n  \"itemGroup.culturecraft.combat\": \"华夏文明 | 战斗\",\r\n  \"itemGroup.culturecraft.misc\": \"华夏文明 | 杂项\",\r\n\r\n  \"item.culturecraft.celery_cabbage\": \"白菜\",\r\n  \"item.culturecraft.eggplant\": \"茄子\",\r\n  \"item.culturecraft.pepper_chili\": \"辣椒\",\r\n  \"item.culturecraft.pepper_green\": \"青椒\",\r\n  \"item.culturecraft.radish_green\": \"青萝卜\",\r\n  \"item.culturecraft.radish_summer\": \"水萝卜\",\r\n  \"item.culturecraft.radish_white\": \"白萝卜\",\r\n  \"item.culturecraft.pepper_chili_seed\": \"辣椒种子\",\r\n  \"item.culturecraft.pepper_green_seed\": \"青椒种子\",\r\n  \"item.culturecraft.rice\": \"米\",\r\n  \"item.culturecraft.cucumber\": \"黄瓜\",\r\n  \"item.culturecraft.eggplant_seed\": \"茄子种子\",\r\n  \"item.culturecraft.millet_seed\": \"小米种子\",\r\n  \"item.culturecraft.seed_rice\": \"米的种子\",\r\n\r\n  \"item.culturecraft.bowl\": \"碗\",\r\n  \"item.culturecraft.plate\": \"盘子\",\r\n  \"item.culturecraft.knife\": \"水果刀\",\r\n  \"item.culturecraft.chirping_wildgoose\": \"鸣鸿刀\",\r\n  \"item.culturecraft.seven_stars_precious_blade\": \"七星刀\",\r\n\r\n  \"item.culturecraft.bowl_rice\": \"米饭\",\r\n  \"item.culturecraft.heroes_assemble\": \"群英荟萃\",\r\n  \"item.culturecraft.dumpling\": \"饺子\",\r\n  \"item.culturecraft.spirits\": \"白酒\",\r\n  \"item.culturecraft.charred_food\": \"烧焦的食物\",\r\n  \"item.culturecraft.soybean_milk\": \"豆浆\",\r\n  \"item.culturecraft.tofu\": \"豆腐\",\r\n  \"item.culturecraft.green_pepper_shredded_meat\": \"青椒炒肉丝\",\r\n\r\n  \"item.culturecraft.buffalo_spawn_egg\": \"水牛刷怪蛋\",\r\n\r\n  \"block.culturecraft.marble_white\": \"汉白玉\",\r\n  \"block.culturecraft.brick_black\": \"黑砖块\",\r\n  \"block.culturecraft.glaze_colored\": \"釉\",\r\n  \"block.culturecraft.tile_gray\": \"灰瓦片\",\r\n  \"block.culturecraft.pottery\": \"陶器\",\r\n  \"block.culturecraft.porcelain\": \"瓷器\",\r\n  \"block.culturecraft.stove\": \"炉灶\",\r\n  \"block.culturecraft.tile\": \"瓦片\",\r\n  \"block.culturecraft.log_walnut\": \"核桃树原木\",\r\n  \"block.culturecraft.plank_walnut\": \"核桃树木板\",\r\n  \"block.culturecraft.leaves_walnut\": \"核桃树树叶\",\r\n  \"block.culturecraft.sapling_walnut\": \"核桃树树苗\",\r\n  \"block.culturecraft.log_peach\": \"桃树原木\",\r\n  \"block.culturecraft.plank_peach\": \"桃树木板\",\r\n  \"block.culturecraft.leaves_peach\": \"桃树树叶\",\r\n  \"block.culturecraft.sapling_peach\": \"桃树树苗\",\r\n\r\n  \"entity.culturecraft.buffalo\": \"水牛\",\r\n\r\n  \"tooltip.culturecraft.heroes_assemble\": \"你说这是群英荟萃，我看这像萝卜开会。\",\r\n  \"tooltip.culturecraft.bowl_rice\": \"香喷喷的白米饭~\",\r\n  \"tooltip.culturecraft.bowl_empty\": \"这是碗！\",\r\n  \"tooltip.culturecraft.plate\": \"有了盘子可以做更多的美食了。\",\r\n  \"tooltip.culturecraft.green_pepper_shredded_meat\": \"好吃吗？\",\r\n  \"tooltip.culturecraft.tofu\": \"豆腐~\",\r\n  \"tooltip.culturecraft.tofu.2\": \"卤水点的豆腐。\",\r\n  \"tooltip.culturecraft.knife\": \"水果刀 用于切小型蔬菜食物\",\r\n\r\n  \"message.culturecraft.player.join.welcome\": \"欢迎！\"\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/assets/culturecraft/lang/zh_cn.json	(revision 816ef996fd479d6b582f39254a917d0ccf03303a)
++++ src/main/resources/assets/culturecraft/lang/zh_cn.json	(date 1594027416394)
+@@ -20,6 +20,8 @@
+   "item.culturecraft.eggplant_seed": "茄子种子",
+   "item.culturecraft.millet_seed": "小米种子",
+   "item.culturecraft.seed_rice": "米的种子",
++  "item.culturecraft.milk_soyben": "豆奶",
++  "item.culturecraft.scallion": "葱",
+ 
+   "item.culturecraft.bowl": "碗",
+   "item.culturecraft.plate": "盘子",
+Index: src/main/java/cx/rain/mc/forgemod/culturecraft/item/automatic/ItemSeedSorghum.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/cx/rain/mc/forgemod/culturecraft/item/automatic/ItemSeedSorghum.java	(date 1594028352352)
++++ src/main/java/cx/rain/mc/forgemod/culturecraft/item/automatic/ItemSeedSorghum.java	(date 1594028352352)
+@@ -0,0 +1,15 @@
++package cx.rain.mc.forgemod.culturecraft.item.automatic;
++
++import cx.rain.mc.forgemod.culturecraft.api.annotation.ModItem;
++import cx.rain.mc.forgemod.culturecraft.group.Groups;
++import net.minecraft.item.Item;
++import org.lwjgl.system.CallbackI;
++
++@ModItem(name = "seed_sorghum")
++public class ItemSeedSorghum extends Item {
++    public ItemSeedSorghum() {
++        super(new Properties()
++        .group(Groups.MISC)
++        .maxStackSize(64));
++    }
++}
+Index: src/main/java/cx/rain/mc/forgemod/culturecraft/block/automatic/BlockPlantSorghum.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cx.rain.mc.forgemod.culturecraft.block.automatic;\r\n\r\nimport cx.rain.mc.forgemod.culturecraft.api.annotation.ModBlock;\r\nimport net.minecraft.block.CropsBlock;\r\n\r\n@ModBlock(name = \"plant_sorghum\")\r\npublic class BlockPlantSorghum extends CropsBlock {\r\n    protected BlockPlantSorghum(Properties builder) {\r\n        super(builder);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/cx/rain/mc/forgemod/culturecraft/block/automatic/BlockPlantSorghum.java	(revision 816ef996fd479d6b582f39254a917d0ccf03303a)
++++ src/main/java/cx/rain/mc/forgemod/culturecraft/block/automatic/BlockPlantSorghum.java	(date 1594026587711)
+@@ -1,5 +1,5 @@
+ package cx.rain.mc.forgemod.culturecraft.block.automatic;
+-
++/*
+ import cx.rain.mc.forgemod.culturecraft.api.annotation.ModBlock;
+ import net.minecraft.block.CropsBlock;
+ 
+@@ -8,4 +8,5 @@
+     protected BlockPlantSorghum(Properties builder) {
+         super(builder);
+     }
+-}
++}//两格高植物 看到的帮忙敲了
++*/
+\ No newline at end of file
+Index: src/main/resources/assets/culturecraft/models/item/millet.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/assets/culturecraft/models/item/millet.json	(date 1594029421628)
++++ src/main/resources/assets/culturecraft/models/item/millet.json	(date 1594029421628)
+@@ -0,0 +1,6 @@
++{
++  "parent": "item/generated",
++  "textures": {
++    "layer0": "culturecraft:items/millet"
++  }
++}
+\ No newline at end of file
+Index: src/main/resources/assets/culturecraft/models/item/milk_soyben.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/assets/culturecraft/models/item/milk_soyben.json	(date 1594030196951)
++++ src/main/resources/assets/culturecraft/models/item/milk_soyben.json	(date 1594030196951)
+@@ -0,0 +1,6 @@
++{
++  "parent": "item/generated",
++  "textures": {
++    "layer0": "culturecraft:items/milk_soyben"
++  }
++}
+\ No newline at end of file
+Index: src/main/resources/assets/culturecraft/models/item/seed_sorghum.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/assets/culturecraft/models/item/seed_sorghum.json	(date 1594028352367)
++++ src/main/resources/assets/culturecraft/models/item/seed_sorghum.json	(date 1594028352367)
+@@ -0,0 +1,6 @@
++{
++  "parent": "item/generated",
++  "textures": {
++    "layer0": "culturecraft:items/seed_sorghum"
++  }
++}
+\ No newline at end of file
+diff --git src/main/resources/assets/culturecraft/models/item/millet_seed.json src/main/resources/assets/culturecraft/models/item/seed_millet.json
+rename from src/main/resources/assets/culturecraft/models/item/millet_seed.json
+rename to src/main/resources/assets/culturecraft/models/item/seed_millet.json

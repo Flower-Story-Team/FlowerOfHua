@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ef32681e-f8c4-46b1-bf0a-1ff190e35bfc" name="默认的" comment="Add:Base" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="package.json" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1eHPonYCUaCeYXSBOLAVe8YZo4Z" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="更新" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="cx.rain.mc.forgemod.culturecraft.season.worldsavedata" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\qinxin\Documents\GitHub\CultureCraft\src\main\resources\assets\culturecraft\models\block" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.CultureCraft [runClient]">
+    <configuration name="CultureCraft [runClient]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runClient" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="未命名" type="GroovyScriptRunConfiguration" factoryName="Groovy" nameIsGenerated="true">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.CultureCraft [runClient]" />
+      <item itemvalue="Groovy.未命名" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef32681e-f8c4-46b1-bf0a-1ff190e35bfc" name="默认的" comment="" />
+      <created>1593975722171</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593975722171</updated>
+      <workItem from="1593975730820" duration="4620000" />
+      <workItem from="1594021562261" duration="10535000" />
+      <workItem from="1594036778234" duration="4905000" />
+      <workItem from="1594059168300" duration="6729000" />
+      <workItem from="1594100739253" duration="2817000" />
+      <workItem from="1594108243212" duration="5439000" />
+      <workItem from="1594134688936" duration="2818000" />
+      <workItem from="1594147967189" duration="683000" />
+      <workItem from="1594188013396" duration="690000" />
+      <workItem from="1594208314196" duration="18015000" />
+      <workItem from="1594236510355" duration="642000" />
+      <workItem from="1594237297435" duration="20000" />
+      <workItem from="1594283635068" duration="1246000" />
+    </task>
+    <task id="LOCAL-00001" summary="add:添加了一点点东西一把小刀">
+      <created>1593982441179</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1593982441181</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add:bowl">
+      <created>1594023300125</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1594023300125</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add:bowl/riceSeed">
+      <created>1594024465929</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1594024465929</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix">
+      <created>1594024661269</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1594024661269</updated>
+    </task>
+    <task id="LOCAL-00005" summary="添加种子（无植物）">
+      <created>1594032774169</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1594032774169</updated>
+    </task>
+    <task id="LOCAL-00006" summary="小添加">
+      <created>1594039188084</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1594039188084</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add:山羊，米的种子（可以种植，无模型）&#10;Change：更改了一些内容 添加量音效注册">
+      <created>1594065896310</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1594065896310</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add:plant">
+      <created>1594123251837</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1594123251837</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix:id">
+      <created>1594123531432</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1594123531432</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add：马车（未完）">
+      <created>1594125146720</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1594125146720</updated>
+    </task>
+    <task id="LOCAL-00011" summary="添加了Seanson未完">
+      <created>1594235293431</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1594235293431</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add:Base">
+      <created>1594284796879</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1594284796879</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add:添加了一点点东西一把小刀" />
+    <MESSAGE value="add:bowl" />
+    <MESSAGE value="add:bowl/riceSeed" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="添加种子（无植物）" />
+    <MESSAGE value="小添加" />
+    <MESSAGE value="add:山羊，米的种子（可以种植，无模型）&#10;Change：更改了一些内容 添加量音效注册" />
+    <MESSAGE value="add:plant" />
+    <MESSAGE value="Fix:id" />
+    <MESSAGE value="add：马车（未完）" />
+    <MESSAGE value="添加了Seanson未完" />
+    <MESSAGE value="Add:Base" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add:Base" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594229824825">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="137" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1594229824825" />
+    <state x="488" y="77" key="#com.intellij.ide.util.MemberChooser" timestamp="1594232736731">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="488" y="77" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1594232736731" />
+    <state x="202" y="296" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1594188247080">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="202" y="296" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.738@0.0.1366.738" timestamp="1594188247080" />
+    <state x="431" y="245" width="504" height="249" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1594023276563">
+      <screen x="0" y="0" width="1366" height="734" />
+    </state>
+    <state x="431" y="245" width="504" height="249" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.734@0.0.1366.734" timestamp="1594023276563" />
+    <state x="463" y="126" key="FileChooserDialogImpl" timestamp="1594237316888">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="126" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1594237316888" />
+    <state width="1323" height="167" key="GridCell.Tab.0.bottom" timestamp="1594235664566">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.0.bottom/0.0.1366.734@0.0.1366.734" timestamp="1594042157308" />
+    <state width="1323" height="167" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1594235664566" />
+    <state width="1323" height="167" key="GridCell.Tab.0.center" timestamp="1594235664565">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.0.center/0.0.1366.734@0.0.1366.734" timestamp="1594042157308" />
+    <state width="1323" height="167" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1594235664565" />
+    <state width="1323" height="167" key="GridCell.Tab.0.left" timestamp="1594235664564">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.0.left/0.0.1366.734@0.0.1366.734" timestamp="1594042157307" />
+    <state width="1323" height="167" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1594235664564" />
+    <state width="1323" height="167" key="GridCell.Tab.0.right" timestamp="1594235664565">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="180" key="GridCell.Tab.0.right/0.0.1366.734@0.0.1366.734" timestamp="1594042157308" />
+    <state width="1323" height="167" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1594235664565" />
+    <state x="129" y="55" key="MergeDialog" timestamp="1593978796656">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="129" y="55" key="MergeDialog/0.0.1366.738@0.0.1366.738" timestamp="1593978796656" />
+    <state x="186" y="15" key="SettingsEditor" timestamp="1594148818549">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="186" y="15" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1594148818549" />
+    <state x="379" y="86" key="VCS.ChangeListViewerDialog" timestamp="1594105199608">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="379" y="86" key="VCS.ChangeListViewerDialog/0.0.1366.738@0.0.1366.738" timestamp="1594105199608" />
+    <state x="275" y="104" key="Vcs.Push.Dialog.v2" timestamp="1594284860018">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.734@0.0.1366.734" timestamp="1594039324202" />
+    <state x="275" y="104" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1594284860018" />
+    <state x="381" y="269" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1594233069273">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="381" y="269" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1366.738@0.0.1366.738" timestamp="1594233069273" />
+    <state x="389" y="105" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1594284771464">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="389" y="105" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1366.738@0.0.1366.738" timestamp="1594284771464" />
+    <state x="505" y="284" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594188257096">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="505" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.734@0.0.1366.734" timestamp="1594039112325" />
+    <state x="505" y="284" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1594188257096" />
+  </component>
+</project>

@@ -1,0 +1,19 @@
+Index: src/main/java/cx/rain/mc/forgemod/culturecraft/block/automatic/BlockPlantSorghum.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/cx/rain/mc/forgemod/culturecraft/block/automatic/BlockPlantSorghum.java	(date 1594023886270)
++++ src/main/java/cx/rain/mc/forgemod/culturecraft/block/automatic/BlockPlantSorghum.java	(date 1594023886270)
+@@ -0,0 +1,11 @@
++package cx.rain.mc.forgemod.culturecraft.block.automatic;
++
++import cx.rain.mc.forgemod.culturecraft.api.annotation.ModBlock;
++import net.minecraft.block.CropsBlock;
++
++@ModBlock(name = "plant_sorghum")
++public class BlockPlantSorghum extends CropsBlock {
++    protected BlockPlantSorghum(Properties builder) {
++        super(builder);
++    }
++}

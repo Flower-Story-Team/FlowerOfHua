@@ -1,0 +1,36 @@
+Index: src/main/resources/data/culturecraft/loot_tables/blocks/eggplant_plant.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"type\": \"minecraft:block\",\r\n  \"pools\": [\r\n    {\r\n      \"rolls\": 1.0,\r\n      \"entries\": [\r\n        {\r\n          \"type\": \"minecraft:item\",\r\n          \"name\": \"culturecraft:eggplant\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"rolls\": 1.0,\r\n      \"entries\": [\r\n        {\r\n          \"type\": \"minecraft:item\",\r\n          \"functions\": [\r\n            {\r\n              \"function\": \"minecraft:apply_bonus\",\r\n              \"enchantment\": \"minecraft:fortune\",\r\n              \"formula\": \"minecraft:binomial_with_bonus_count\",\r\n              \"parameters\": {\r\n                \"extra\": 3,\r\n                \"probability\": 0.5714286\r\n              }\r\n            }\r\n          ],\r\n          \"name\": \"culturecraft:eggplant\"\r\n        }\r\n      ],\r\n      \"conditions\": [\r\n        {\r\n          \"condition\": \"minecraft:block_state_property\",\r\n          \"block\": \"culturecraft:eggplant_plant\",\r\n          \"properties\": {\r\n            \"age\": \"8\"\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"functions\": [\r\n    {\r\n      \"function\": \"minecraft:explosion_decay\"\r\n    }\r\n  ]\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/data/culturecraft/loot_tables/blocks/eggplant_plant.json	(revision 2a721679382d5eb802d8acf300435e9e7dfc9c2a)
++++ src/main/resources/data/culturecraft/loot_tables/blocks/eggplant_plant.json	(date 1594102653150)
+@@ -34,7 +34,7 @@
+           "condition": "minecraft:block_state_property",
+           "block": "culturecraft:eggplant_plant",
+           "properties": {
+-            "age": "8"
++            "age": "7"
+           }
+         }
+       ]
+Index: src/main/java/cx/rain/mc/forgemod/culturecraft/structure/tree/PeachTree.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cx.rain.mc.forgemod.culturecraft.structure.tree;\r\n\r\nimport cx.rain.mc.forgemod.culturecraft.world.gen.Features;\r\nimport net.minecraft.block.trees.Tree;\r\nimport net.minecraft.world.biome.DefaultBiomeFeatures;\r\nimport net.minecraft.world.gen.feature.ConfiguredFeature;\r\nimport net.minecraft.world.gen.feature.Feature;\r\nimport net.minecraft.world.gen.feature.TreeFeatureConfig;\r\n\r\nimport javax.annotation.Nullable;\r\nimport java.util.Random;\r\n\r\npublic class PeachTree extends Tree {\r\n    @Nullable\r\n    @Override\r\n    protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {\r\n        return Feature.NORMAL_TREE.withConfiguration(Features.TREE_PEACH_CONFIG);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/cx/rain/mc/forgemod/culturecraft/structure/tree/PeachTree.java	(revision 2a721679382d5eb802d8acf300435e9e7dfc9c2a)
++++ src/main/java/cx/rain/mc/forgemod/culturecraft/structure/tree/PeachTree.java	(date 1594105141481)
+@@ -10,7 +10,7 @@
+ import javax.annotation.Nullable;
+ import java.util.Random;
+ 
+-public class PeachTree extends Tree {
++public class ·PeachTree extends Tree {
+     @Nullable
+     @Override
+     protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {

@@ -1,0 +1,62 @@
+Index: src/main/java/cx/rain/mc/forgemod/culturecraft/entity/passive/EntityCarriage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cx.rain.mc.forgemod.culturecraft.entity.passive;\r\n\r\nimport cx.rain.mc.forgemod.culturecraft.entity.Entities;\r\nimport net.minecraft.entity.AgeableEntity;\r\nimport net.minecraft.entity.EntityType;\r\nimport net.minecraft.entity.SharedMonsterAttributes;\r\nimport net.minecraft.entity.ai.goal.EatGrassGoal;\r\nimport net.minecraft.entity.passive.AnimalEntity;\r\nimport net.minecraft.world.World;\r\n\r\n/** 未完成\r\n *  等材质与模型 ， 使用方法右键上车，打开gui选择驿站\r\n *  会自动探路\r\n */\r\npublic class EntityCarriage extends AnimalEntity {\r\n\r\n    private EatGrassGoal eatGrassGoal;\r\n    private int exampleTimer;\r\n\r\n\r\n    public EntityCarriage(World worldIn) {\r\n        super(Entities.ENTITY_BUFFALO, worldIn);\r\n    }\r\n\r\n    public EntityCarriage(EntityType<? extends EntityBuffalo> type, World worldIn) {\r\n        super(type, worldIn);\r\n    }\r\n    @Override\r\n    protected void updateAITasks() {\r\n        this.exampleTimer = this.eatGrassGoal.getEatingGrassTimer();\r\n        super.updateAITasks();\r\n    }\r\n\r\n\r\n    @Override\r\n    public void livingTick() {\r\n        if (this.world.isRemote) {\r\n            this.exampleTimer = Math.max(0, this.exampleTimer - 1);\r\n        }\r\n        super.livingTick();\r\n    }\r\n    @Override\r\n    protected void registerAttributes() {\r\n        super.registerAttributes();\r\n        this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(26.0D);\r\n        this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.28D);\r\n    }\r\n    @Override\r\n    public EntityCarriage createChild(AgeableEntity ageable) {\r\n        return null;\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/cx/rain/mc/forgemod/culturecraft/entity/passive/EntityCarriage.java	(revision 88427e041a1e8c1a21cecb9cf4c2ca5b4dda2c2b)
++++ src/main/java/cx/rain/mc/forgemod/culturecraft/entity/passive/EntityCarriage.java	(date 1594137191936)
+@@ -12,6 +12,7 @@
+  *  等材质与模型 ， 使用方法右键上车，打开gui选择驿站
+  *  会自动探路
+  */
++
+ public class EntityCarriage extends AnimalEntity {
+ 
+     private EatGrassGoal eatGrassGoal;
+Index: src/main/java/cx/rain/mc/forgemod/culturecraft/biomes/RegistryBiome.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/cx/rain/mc/forgemod/culturecraft/biomes/RegistryBiome.java	(date 1594137191823)
++++ src/main/java/cx/rain/mc/forgemod/culturecraft/biomes/RegistryBiome.java	(date 1594137191823)
+@@ -0,0 +1,37 @@
++package cx.rain.mc.forgemod.culturecraft.biomes;
++
++import net.minecraft.util.math.BlockPos;
++import net.minecraft.world.biome.Biome;
++
++public abstract class RegistryBiome extends Biome {
++
++    protected RegistryBiome(Builder biomeBuilder) {
++        super(biomeBuilder);
++    }
++
++    // override to register a custom biome weight with Forge's BiomeManager (default is 10)
++    public void registerWeights() {}
++
++    @Override
++    public int getGrassColor(double x, double z) {
++        return getBase().getGrassColor(x, z);
++    }
++
++    @Override
++    public int getFoliageColor() {
++        return getBase().getFoliageColor();
++    }
++
++    @Override
++    public int getSkyColor() {
++        return getBase().getSkyColor();
++    }
++
++    public abstract Biome getBase();
++
++    protected static float getTemperatureNoise(BlockPos pos) {
++        float value = (float) (TEMPERATURE_NOISE.noiseAt(pos.getX() / 8F, pos.getZ() / 8F, false) * 4F);
++        return (value + pos.getY() - 64F) * 0.05F / 30F;
++    }
++}
++

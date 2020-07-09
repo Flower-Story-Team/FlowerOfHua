@@ -1,0 +1,59 @@
+Index: src/main/java/cx/rain/mc/forgemod/culturecraft/api/annotation/ModBlock.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cx.rain.mc.forgemod.culturecraft.api.annotation;\r\n\r\nimport java.lang.annotation.ElementType;\r\nimport java.lang.annotation.Retention;\r\nimport java.lang.annotation.RetentionPolicy;\r\nimport java.lang.annotation.Target;\r\nimport cx.rain.mc.forgemod.culturecraft.api.interfaces.IBlockFactory;\r\nimport cx.rain.mc.forgemod.culturecraft.api.interfaces.BlockFactory;\r\n\r\n/**\r\n * ModBlock annotation.\r\n * For auto register blocks.\r\n * Use on class extends Block.\r\n * @author AmemiyaSigure\r\n */\r\n@Retention(RetentionPolicy.RUNTIME)\r\n@Target(ElementType.TYPE)\r\npublic @interface ModBlock {\r\n    /**\r\n     * Registry name of block\r\n     * @return RegistryName\r\n     */\r\n    String name();\r\n\r\n    /**\r\n     * The factory class get the instance of block\r\n     * @return The factory\r\n     */\r\n    Class<? extends IBlockFactory> factory() default BlockFactory.class;\r\n\r\n\r\n    /**\r\n     * The args to factory's callable factory\r\n     * @return The args to factory's callable factory\r\n     */\r\n    Class<? extends Callable<Object[][]>> args() default NullArgs;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/cx/rain/mc/forgemod/culturecraft/api/annotation/ModBlock.java	(revision aface97e3038c97706d09d4d5ee3ba92baace5c6)
++++ src/main/java/cx/rain/mc/forgemod/culturecraft/api/annotation/ModBlock.java	(date 1593976444453)
+@@ -4,6 +4,8 @@
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.RetentionPolicy;
+ import java.lang.annotation.Target;
++import java.util.concurrent.Callable;
++
+ import cx.rain.mc.forgemod.culturecraft.api.interfaces.IBlockFactory;
+ import cx.rain.mc.forgemod.culturecraft.api.interfaces.BlockFactory;
+ 
+Index: src/main/java/cx/rain/mc/forgemod/culturecraft/api/annotation/ModItem.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cx.rain.mc.forgemod.culturecraft.api.annotation;\r\n\r\nimport java.lang.annotation.ElementType;\r\nimport java.lang.annotation.Retention;\r\nimport java.lang.annotation.RetentionPolicy;\r\nimport java.lang.annotation.Target;\r\nimport cx.rain.mc.forgemod.culturecraft.api.interfaces.IItemFactory;\r\nimport cx.rain.mc.forgemod.culturecraft.api.interfaces.ItemFactory;\r\n\r\n/**\r\n * ModItem annotation.\r\n * For auto register items.\r\n * Use on class extends Item.\r\n * @author AmemiyaSigure\r\n */\r\n@Retention(RetentionPolicy.RUNTIME)\r\n@Target(ElementType.TYPE)\r\npublic @interface ModItem {\r\n    /**\r\n     * Registry name of item\r\n     * @return RegistryName\r\n     */\r\n    String name();\r\n\r\n    /**\r\n     * The factory class get the instance of item\r\n     * @return The factory\r\n     */\r\n    Class<? extends IItemFactory> factory() default ItemFactory.class;\r\n\r\n    /**\r\n     * The args to factory's callable factory\r\n     * @return The args to factory's callable factory\r\n     */\r\n    Class<? extends Callable<Object[][]>> args() default NullArgs;\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/cx/rain/mc/forgemod/culturecraft/api/annotation/ModItem.java	(revision aface97e3038c97706d09d4d5ee3ba92baace5c6)
++++ src/main/java/cx/rain/mc/forgemod/culturecraft/api/annotation/ModItem.java	(date 1593976444485)
+@@ -4,6 +4,8 @@
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.RetentionPolicy;
+ import java.lang.annotation.Target;
++import java.util.concurrent.Callable;
++
+ import cx.rain.mc.forgemod.culturecraft.api.interfaces.IItemFactory;
+ import cx.rain.mc.forgemod.culturecraft.api.interfaces.ItemFactory;
+ 
+Index: src/main/java/cx/rain/mc/forgemod/culturecraft/api/annotation/NullArgs.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cx.rain.mc.forgemod.culturecraft.api.annotation;\r\n\r\nimport java.lang.annotation.ElementType;\r\nimport java.lang.annotation.Retention;\r\nimport java.lang.annotation.RetentionPolicy;\r\nimport java.lang.annotation.Target;\r\nimport cx.rain.mc.forgemod.culturecraft.api.interfaces.IBlockFactory;\r\nimport cx.rain.mc.forgemod.culturecraft.api.interfaces.BlockFactory;\r\n\r\npublic class NullArgs extends Callable<Object[][]>{\r\n    @Override\r\n    public Object[][] call() throws Exception{\r\n        return null;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/cx/rain/mc/forgemod/culturecraft/api/annotation/NullArgs.java	(revision aface97e3038c97706d09d4d5ee3ba92baace5c6)
++++ src/main/java/cx/rain/mc/forgemod/culturecraft/api/annotation/NullArgs.java	(date 1593976444470)
+@@ -4,10 +4,12 @@
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.RetentionPolicy;
+ import java.lang.annotation.Target;
++import java.util.concurrent.Callable;
++
+ import cx.rain.mc.forgemod.culturecraft.api.interfaces.IBlockFactory;
+ import cx.rain.mc.forgemod.culturecraft.api.interfaces.BlockFactory;
+ 
+-public class NullArgs extends Callable<Object[][]>{
++public class NullArgs implements Callable<Object[][]> {
+     @Override
+     public Object[][] call() throws Exception{
+         return null;
